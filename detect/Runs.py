@@ -9,7 +9,7 @@ from math import sqrt
 from scipy.special import erfc
 
 
-def runs(bit_stream: str, alpha=0.01):
+def runs(bit_stream: str, alpha=0.01, **args):
     """
     @description: 游程总数检测
     @param bit_stream: 比特流
@@ -35,13 +35,21 @@ def runs(bit_stream: str, alpha=0.01):
     p_value = erfc(abs(V) / sqrt(2))
     q_value = erfc(V / sqrt(2)) / 2
 
+    log = f'游程总数检测：\n' \
+          f'\t游程总数：{Vn}\n' \
+          f'\t比特流长度：{n}\n' \
+          f'\t比特流中1的比例：{pi}\n' \
+          f'\tV：{V}\n' \
+          f'\tP-value：{p_value}\n' \
+          f'\tQ-value：{q_value}\n\n'
+
     if p_value < alpha:
-        return False, p_value, q_value
+        return False, p_value, q_value, log
     else:
-        return True, p_value, q_value
+        return True, p_value, q_value, log
 
 
 if __name__ == '__main__':
-    e = '1100110000010101011011000100110011100000000000100100110101010001'\
+    e = '1100110000010101011011000100110011100000000000100100110101010001' \
         '0001001111010110100000001101011111001100111001101101100010110010'
     print(runs(e))

@@ -30,7 +30,7 @@ def _statistic_func(bit_stream: str, n, m):
     return V
 
 
-def serial(bit_stream: str, m, alpha=0.01):
+def serial(bit_stream: str, alpha=0.01, **args):
     """
     @description: 重叠子序列检测方法
     @param bit_stream: 比特流
@@ -38,6 +38,7 @@ def serial(bit_stream: str, m, alpha=0.01):
     @param alpha: 显著性水平
     @return: 重叠子序列检测结果
     """
+    m = args['m']
     n = len(bit_stream)
     
     # 统计m位、m-1位、m-2位子序列出现的次数
@@ -54,13 +55,26 @@ def serial(bit_stream: str, m, alpha=0.01):
     q_value_1 = p_value_1
     q_value_2 = p_value_2
 
+    log = f'重叠子序列检测方法：\n' \
+            f'    n = {n}\n' \
+            f'    m = {m}\n' \
+            f'    V_m = {V_m}\n' \
+            f'    V_m_1 = {V_m_1}\n' \
+            f'    V_m_2 = {V_m_2}\n' \
+            f'    delta_1 = {delta_1}\n' \
+            f'    delta_2 = {delta_2}\n' \
+            f'    p_value_1 = {p_value_1}\n' \
+            f'    p_value_2 = {p_value_2}\n' \
+            f'    q_value_1 = {q_value_1}\n' \
+            f'    q_value_2 = {q_value_2}\n\n'
+
     if p_value_1 < alpha or p_value_2 < alpha:
-        return False, p_value_1, p_value_2, q_value_1, q_value_2
+        return False, (p_value_1, p_value_2), (q_value_1, q_value_2), log
     else:
-        return True, p_value_1, p_value_2, q_value_1, q_value_2
+        return True, (p_value_1, p_value_2), (q_value_1, q_value_2), log
 
 
 if __name__ == '__main__':
     e = '1100110000010101011011000100110011100000000000100100110101010001' \
         '0001001111010110100000001101011111001100111001101101100010110010'
-    print(serial(e, 2))
+    print(serial(e, m=2))

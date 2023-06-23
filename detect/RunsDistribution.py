@@ -58,7 +58,7 @@ def _statistic_runs(runs: list, mode: int, k):
     return run_length_counts
 
 
-def runs_distribution(bit_stream: str, alpha=0.01):
+def runs_distribution(bit_stream: str, alpha=0.01, **args):
     """
     @description: 游程分布检测
     @param bit_stream: 比特流
@@ -99,10 +99,22 @@ def runs_distribution(bit_stream: str, alpha=0.01):
     p_value = igamc(k - 1, V / 2)
     q_value = p_value
 
+    log= f'游程分布检测：\n' \
+            f'\t输入比特流长度：{n}\n' \
+            f'\t最大游程长度：{k}\n' \
+            f'\t游程总数：{T}\n' \
+            f'\t游程长度分布：\n' \
+            f'\t\t游程长度\t0游程数\t1游程数\t期望值\n'
+    for i in range(1, k + 1):
+        log += f'\t\t{i}\t\t{bi[i]}\t\t{gi[i]}\t\t{ei[i]}\n'
+    log += f'\t统计量：{V}\n' \
+            f'\tP-value：{p_value}\n' \
+            f'\tQ-value：{q_value}\n\n'
+
     if p_value < alpha:
-        return False, p_value, q_value
+        return False, p_value, q_value, log
     else:
-        return True, p_value, q_value
+        return True, p_value, q_value, log
 
 
 if __name__ == '__main__':

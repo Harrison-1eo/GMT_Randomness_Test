@@ -10,7 +10,7 @@ import numpy as np
 from scipy.special import gammaincc as igamc
 
 
-def frequency_within_a_block(bit_stream: str, m, alpha=0.01):
+def frequency_within_a_block(bit_stream: str, alpha=0.01, **args):
     """
     @description: 块内频数检测
     @param bit_stream: 比特流
@@ -18,6 +18,8 @@ def frequency_within_a_block(bit_stream: str, m, alpha=0.01):
     @param alpha: 显著性水平
     @return: 块内频数检测结果
     """
+    m = args['m']
+
     n = len(bit_stream)
     N = n // m
 
@@ -36,10 +38,18 @@ def frequency_within_a_block(bit_stream: str, m, alpha=0.01):
     p_value = igamc(N / 2, V / 2)
     q_value = p_value
 
+    log = f'块内频数检测：\n' \
+            f'\t块大小：{m}\n' \
+            f'\t比特流长度：{n}\n' \
+            f'\t块数：{N}\n' \
+            f'\tV：{V}\n' \
+            f'\tp_value：{p_value}\n' \
+            f'\tq_value：{q_value}\n\n'
+
     if p_value < alpha:
-        return False, p_value, q_value
+        return False, p_value, q_value, log
     else:
-        return True, p_value, q_value
+        return True, p_value, q_value, log
 
 
 if __name__ == '__main__':

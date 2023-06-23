@@ -10,13 +10,15 @@ import numpy as np
 from scipy.special import gammaincc as igamc
 
 
-def poker(bit_stream: str, m, alpha=0.01):
+def poker(bit_stream: str, alpha=0.01, **args):
     """
     @description: 扑克检测
     @param bit_stream: 比特流
     @param alpha: 显著性水平
     @return: 扑克检测结果
     """
+    m = args['m']
+
     n = len(bit_stream)
     N = n // m
 
@@ -41,12 +43,21 @@ def poker(bit_stream: str, m, alpha=0.01):
     p_value = igamc((2 ** m - 1) / 2, V / 2)
     q_value = p_value
 
+    log = f'扑克检测\n' \
+            f'    子序列长度m = {m}\n' \
+            f'    子序列个数N = {N}\n' \
+            f'    统计量V = {V}\n' \
+            f'    p值 = {p_value}\n' \
+            f'    q值 = {q_value}\n'
+
+
+
     if p_value < alpha:
-        return False, p_value, q_value
+        return False, p_value, q_value, log
     else:
-        return True, p_value, q_value
+        return True, p_value, q_value, log
 
 
 if __name__ == '__main__':
     e = '11001100000101010110110001001100111000000000001001001101010100010001001111010110100000001101011111001100111001101101100010110010'
-    print(poker(e, 4))
+    print(poker(e, m=4))
