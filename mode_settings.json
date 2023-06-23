@@ -1,0 +1,297 @@
+{
+  "user_mode": {
+    "monobit_frequency": [{}],
+    "frequency_within_a_block": [
+      {
+        "m": 1000
+      }
+    ],
+    "poker": [
+      {
+        "m": 4
+      },
+      {
+        "m": 8
+      }
+    ],
+    "serial": [
+      {
+        "m": 3
+      },
+      {
+        "m": 5
+      }
+    ],
+    "runs": [{}],
+    "runs_distribution": [{}],
+    "longest_run_of_ones": [
+      {
+        "m": 128
+      }
+    ],
+    "binary_derivative": [
+      {
+        "k": 3
+      },
+      {
+        "k": 7
+      }
+    ],
+    "autocorrelation": [
+      {
+        "d": 2
+      },
+      {
+        "d": 8
+      },
+      {
+        "d": 16
+      }
+    ],
+    "binary_matrix_rank": [{}],
+    "cumulative": [{}],
+    "approximate_entropypoker": [
+      {
+        "m": 2
+      }
+    ],
+    "linear_complexity": [
+      {
+        "m": 500
+      }
+    ],
+    "maurer_universal": [
+      {
+        "L": 7,
+        "Q": 1280
+      }
+    ],
+    "discrete_fourier_transform": [{}]
+  },
+  "20000": {
+    "monobit_frequency": [{}],
+    "frequency_within_a_block": [
+      {
+        "m": 1000
+      }
+    ],
+    "poker": [
+      {
+        "m": 4
+      },
+      {
+        "m": 8
+      }
+    ],
+    "serial": [
+      {
+        "m": 3
+      },
+      {
+        "m": 5
+      }
+    ],
+    "runs": [{}],
+    "runs_distribution": [{}],
+    "longest_run_of_ones": [
+      {
+        "m": 128
+      }
+    ],
+    "binary_derivative": [
+      {
+        "k": 3
+      },
+      {
+        "k": 7
+      }
+    ],
+    "autocorrelation": [
+      {
+        "d": 2
+      },
+      {
+        "d": 8
+      },
+      {
+        "d": 16
+      }
+    ],
+    "binary_matrix_rank": [{}],
+    "cumulative": [{}],
+    "approximate_entropypoker": [
+      {
+        "m": 2
+      }
+    ],
+    "linear_complexity": [
+      {
+        "m": 500
+      }
+    ],
+    "maurer_universal": [
+      {
+        "L": 7,
+        "Q": 1280
+      }
+    ],
+    "discrete_fourier_transform": [{}]
+  },
+  "1000000": {
+    "monobit_frequency": [{}],
+    "frequency_within_a_block": [
+      {
+        "m": 10000
+      }
+    ],
+    "poker": [
+      {
+        "m": 4
+      },
+      {
+        "m": 8
+      }
+    ],
+    "serial": [
+      {
+        "m": 3
+      },
+      {
+        "m": 5
+      }
+    ],
+    "runs": [{}],
+    "runs_distribution": [{}],
+    "longest_run_of_ones": [
+      {
+        "m": 10000
+      }
+    ],
+    "binary_derivative": [
+      {
+        "k": 3
+      },
+      {
+        "k": 7
+      }
+    ],
+    "autocorrelation": [
+      {
+        "d": 2
+      },
+      {
+        "d": 8
+      },
+      {
+        "d": 16
+      }
+    ],
+    "binary_matrix_rank": [{}],
+    "cumulative": [{}],
+    "approximate_entropypoker": [
+      {
+        "m": 2
+      },
+      {
+        "m": 5
+      }
+    ],
+    "linear_complexity": [
+      {
+        "m": 500
+      },
+      {
+        "m": 1000
+      }
+    ],
+    "maurer_universal": [
+      {
+        "L": 7,
+        "Q": 1280
+      }
+    ],
+    "discrete_fourier_transform": [{}]
+  },
+  "100000000": {
+    "monobit_frequency": [{}],
+    "frequency_within_a_block": [
+      {
+        "m": 100000
+      }
+    ],
+    "poker": [
+      {
+        "m": 4
+      },
+      {
+        "m": 8
+      }
+    ],
+    "serial": [
+      {
+        "m": 3
+      },
+      {
+        "m": 5
+      },
+      {
+        "m": 7
+      }
+    ],
+    "runs": [{}],
+    "runs_distribution": [{}],
+    "longest_run_of_ones": [
+      {
+        "m": 10000
+      }
+    ],
+    "binary_derivative": [
+      {
+        "k": 3
+      },
+      {
+        "k": 7
+      },
+      {
+        "k": 15
+      }
+    ],
+    "autocorrelation": [
+      {
+        "d": 2
+      },
+      {
+        "d": 8
+      },
+      {
+        "d": 16
+      },
+      {
+        "d": 32
+      }
+    ],
+    "binary_matrix_rank": [{}],
+    "cumulative": [{}],
+    "approximate_entropypoker": [
+      {
+        "m": 5
+      },
+      {
+        "m": 7
+      }
+    ],
+    "linear_complexity": [
+      {
+        "m": 5000
+      }
+    ],
+    "maurer_universal": [
+      {
+        "L": 7,
+        "Q": 1280
+      }
+    ],
+    "discrete_fourier_transform": [{}]
+  }
+}
+
