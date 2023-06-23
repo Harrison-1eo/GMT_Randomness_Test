@@ -14,6 +14,9 @@ class randomnessApp():
         
 
     def detect_window_input(self):
+        # self.window置顶
+        self.window.lift()
+        
         # 创建一个Frame用于放置标题和勾选框
         frame_left = tk.Frame(self.window)
         frame_left.pack(side=tk.LEFT, padx=10, pady=10)
@@ -172,7 +175,6 @@ class randomnessApp():
     def answer_window(self, l, res):
         answer_window = tk.Toplevel(self.window)
         answer_window.title("检测结果")
-
 
         answer_label = tk.Label(answer_window, text="检测结果如下：", font=("Arial", 20))
         answer_label.grid(row=0, column=0, sticky=tk.W)
